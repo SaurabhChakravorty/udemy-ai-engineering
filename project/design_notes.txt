@@ -1,0 +1,107 @@
+Munder Difflin Multi-Agent System — Design Notes & Report
+=========================================================
+
+FRAMEWORK
+---------
+Framework: smolagents (ToolCallingAgent + OpenAIServerModel)
+Model: gpt-4o-mini via Vocareum OpenAI-compatible proxy
+
+AGENT OVERVIEW
+--------------
+The system uses 4 agents (under the 5-agent maximum):
+
+1. OrchestratorAgent — Entry point; validates requests, runs financial pre-flight
+   checks, and coordinates worker agents.
+2. QuotingAgent — Maps natural-language requests to exact catalog item names,
+   searches historical quotes, and applies bulk discounts.
+3. InventoryAgent — Verifies stock levels and places supplier reorders.
+4. OrderingAgent — Confirms cash/deadline constraints and records sales transactions.
+
+All inter-agent communication is text-based via structured prompts and responses.
+
+STARTER HELPER FUNCTION REFERENCE
+---------------------------------
+generate_sample_inventory()
+  Creates a random 40% subset of paper_supplies with stock quantities (200–800)
+  and min_stock_level (50–150). Used during database initialization.
+
+init_database(db_engine)
+  Creates SQLite tables (transactions, quote_requests, quotes, inventory) and
+  seeds initial cash ($50,000) plus stock order transactions.
+
+create_transaction(item_name, transaction_type, quantity, price, date)
+  Inserts a stock_orders or sales record. Core write path for inventory and revenue.
+
+get_all_inventory(as_of_date)
+  Returns dict of item_name → net stock for all items with positive stock.
+
+get_stock_level(item_name, as_of_date)
+  Returns net stock for one item as of a given date.
+
+get_supplier_delivery_date(input_date, quantity)
+  Estimates supplier lead time: 0/1/4/7 days based on order size.
+
+get_cash_balance(as_of_date)
+  Computes net cash (sales revenue minus stock purchase costs).
+
+generate_financial_report(as_of_date)
+  Full report: cash, inventory value, total assets, itemized inventory, top sellers.
+
+search_quote_history(search_terms, limit)
+  Joins quote_requests and quotes; searches by keyword for pricing guidance.
+
+TOOL ASSIGNMENTS (ALL HELPERS USED)
+-----------------------------------
+- get_stock_level      → check_stock_for_item, reorder_stock, fulfill_sales_order, check_order_feasibility
+- get_all_inventory    → check_all_inventory (Inventory + Orchestrator agents)
+- get_cash_balance     → get_available_cash, reorder_stock, check_order_feasibility
+- generate_financial_report → get_financial_snapshot, generate_company_financial_report
+- get_supplier_delivery_date → estimate_delivery_date, reorder_stock, check_order_feasibility
+- create_transaction   → reorder_stock, fulfill_sales_order
+- search_quote_history → search_historical_quotes
+- init_database        → run_test_scenarios() bootstrap
+- generate_sample_inventory → called by init_database()
+
+REJECTION LOGIC
+---------------
+The system actively rejects orders when:
+- Request includes non-catalog products (A3/A5 paper, balloons, tickets, cardboard)
+- Items cannot be mapped to the catalog
+- Supplier delivery would miss the customer's stated deadline
+- Insufficient cash to fund required supplier reorders
+
+EVALUATION RESULTS (test_results.csv)
+-------------------------------------
+Run: python project_starter.py
+
+Expected outcomes:
+- Multiple orders fulfilled (small/medium requests with in-catalog items)
+- At least one rejection (requests containing balloons, A3 paper, tickets, etc.)
+- Cash balance increases after fulfilled sales; inventory decreases accordingly
+- Delayed status when reorders are placed but stock not yet available on request date
+
+STRENGTHS
+---------
+- Clear separation of concerns across quoting, inventory, and ordering
+- All starter helper functions integrated into agent tools
+- Bulk discount logic encourages larger orders
+- Explicit rejection with customer-facing reasons for impossible constraints
+- Historical quote search improves pricing consistency
+
+AREAS FOR IMPROVEMENT
+---------------------
+1. Add a dedicated Request Parser agent to improve catalog mapping accuracy and
+   reduce LLM token usage by separating structured extraction from prose generation.
+2. Implement persistent order state (quote ID → fulfillment status) so delayed
+   orders can be auto-fulfilled when supplier stock arrives on a later simulation date,
+   rather than requiring manual re-processing.
+
+HOW TO RUN
+----------
+cd project/
+python3 -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt smolagents
+echo 'UDACITY_OPENAI_API_KEY=your_key' > .env
+python project_starter.py
+
+Outputs: console logs, test_results.csv, updated munder_difflin.db

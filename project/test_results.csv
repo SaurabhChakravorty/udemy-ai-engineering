@@ -1,0 +1,106 @@
+request_id,request_date,order_status,cash_balance,inventory_value,response
+1,2025-04-01,rejected,45059.7,4940.299999999999,ORDER REJECTED: We could not map your request to catalog items. Please specify products using our available paper supply catalog.
+2,2025-04-03,rejected,45059.7,4940.299999999999,ORDER REJECTED: We cannot fulfill this request because it includes products we do not carry: Balloons (not in catalog). Please revise your order using our paper supply catalog.
+3,2025-04-04,quoted,45059.7,4940.299999999999,"Note: the following requested products are not in our catalog and were excluded: A3 paper (not in catalog).
+
+""Thank you for your order of A4 paper, Recycled paper, and Standard copy paper. The total amount is $720 after discounts, and we expect to deliver by April 11, 2025.""
+
+--- Inventory ---
+Your order is being processed. We have placed orders for the items that were out of stock, and expect them to be delivered on time before your deadline.
+
+--- Fulfillment ---
+Your order is being processed. We have placed orders for the items that were out of stock, and we expect them to be delivered on time before your deadline."
+4,2025-04-05,quoted,45059.7,4940.299999999999,"""Thank you for your request! Here is your quote for the reception supplies: 500 sheets of high-quality recycled cardstock and 250 sheets of A4 printer paper.
+
+- Total before discount: $162.50
+- Discount applied: $17.50
+- Total amount: $145.00
+
+We estimate delivery by April 9, 2025. If you have any questions, feel free to reach out!""
+
+--- Inventory ---
+Your order is confirmed and will be fulfilled on time. The A4 paper is ready, and the cardstock will be delivered by April 9th.
+
+--- Fulfillment ---
+Your order is confirmed and will be fulfilled on time. The A4 paper is ready, and the cardstock will be delivered by April 9th."
+5,2025-04-05,rejected,45059.7,4940.299999999999,ORDER REJECTED: We could not map your request to catalog items. Please specify products using our available paper supply catalog.
+6,2025-04-06,rejected,45059.7,4940.299999999999,ORDER REJECTED: We could not map your request to catalog items. Please specify products using our available paper supply catalog.
+7,2025-04-07,delayed,45059.7,4940.299999999999,"Note: the following requested products are not in our catalog and were excluded: A3 paper (not in catalog).
+
+""Dear Customer,\n\nThank you for your order request for the upcoming exhibition. We are pleased to provide you with a quote as follows: \n\n- Glossy paper (500 sheets): $100.00\n- Matte paper (1000 sheets): $180.00\n- Large poster paper (24x36 inches) (300 units): $300.00\n- Cardstock (200 sheets): $30.00\n\nSubtotal: $610.00\nDiscount Applied: $120.00\nTotal Amount Due: $490.00\n\nYour order is expected to be delivered by April 14, 2025.\n\nThank you for choosing us for your paper supplies!""
+
+--- Inventory ---
+We have placed a reorder for Matte paper which will arrive on April 14th. All other items are in stock and we are on track to fulfill your order by the deadline.
+
+--- Fulfillment ---
+Your order is currently delayed. We are awaiting the delivery of Matte paper which is expected to arrive by April 14th, allowing us to fulfill your order by the deadline of April 15th."
+8,2025-04-07,delayed,45059.7,4940.299999999999,"Note: the following requested products are not in our catalog and were excluded: A5 paper (not in catalog).
+
+Thank you for your order! Here is your quote for the requested paper supplies:
+
+- Glossy paper (500 sheets): $100.00
+- Matte paper (1000 sheets): $180.00
+- Colored paper (2000 sheets): $200.00
+- Recycled paper (3000 sheets): $240.00
+
+--- Inventory ---
+Your order is being processed! We have sufficient stock or have placed orders to ensure that all items will arrive by April 14, before your deadline.
+
+--- Fulfillment ---
+Your order is being processed! Some items are awaiting supplier delivery."
+9,2025-04-07,rejected,45059.7,4940.299999999999,ORDER REJECTED: We cannot fulfill this request because it includes products we do not carry: A3 paper (not in catalog). Please revise your order using our paper supply catalog.
+13,2025-04-08,rejected,45011.7,4940.299999999999,"""Dear [Customer],
+
+Thank you for your order request! Here is your quote:
+- A4 paper (500 sheets): $25.00
+- 250 gsm cardstock (200 sheets): $60.00
+
+--- Inventory ---
+ORDER REJECTED: Unfortunately, we are unable to fulfill your order by the requested deadline of April 10, 2025, due to current stock limitations. We have placed reorder requests, but they are expected to arrive after the deadline."
+12,2025-04-08,rejected,45011.7,4940.299999999999,ORDER REJECTED: We could not map your request to catalog items. Please specify products using our available paper supply catalog.
+10,2025-04-08,fulfilled,45141.7,4795.3,"""Dear Customer,\n\nThank you for your order request! Here are the details:\n- 500 sheets of high-quality glossy paper\n- 300 sheets of sturdy cardstock\n\nSubtotal: $145.00\nDiscount Applied: $15.00\nTotal Amount: $130.00\n\nYour order will be delivered by April 12, 2025.\n\nBest regards,\nMunder Difflin Paper Supplies""
+
+--- Inventory ---
+Your order is confirmed, and we can deliver the required items by your deadline of April 15, 2025.
+
+--- Fulfillment ---
+Order fulfilled:
+Sold 500 x Glossy paper for $89.66 on 2025-04-08.
+Sold 300 x Cardstock for $40.34 on 2025-04-08.
+Your order is confirmed, and we can deliver the required items by your deadline of April 15, 2025."
+11,2025-04-08,rejected,45141.7,4795.3,ORDER REJECTED: We cannot fulfill this request because it includes products we do not carry: A3 paper (not in catalog). Please revise your order using our paper supply catalog.
+14,2025-04-09,rejected,44781.7,4795.3,ORDER REJECTED: We could not map your request to catalog items. Please specify products using our available paper supply catalog.
+15,2025-04-12,rejected,42474.3,5962.7,"Note: the following requested products are not in our catalog and were excluded: A3 paper (not in catalog), Cardboard (not in catalog).
+
+""Thank you for your large order! Your total is $860, which includes a discount of $215. Here’s the breakdown: 10,000 sheets of A4 paper at $0.05 each ($500), 5,000 sheets of colored paper at $0.10 each ($500), and 500 reams of cardstock at $0.15 each ($75). We aim to deliver your order by April 19, 2025.""
+
+--- Inventory ---
+ORDER REJECTED: Unfortunately, we are unable to fulfill your order by the requested deadline. The necessary supplies will arrive after the delivery date."
+16,2025-04-13,rejected,42474.3,5962.7,"""Thank you for your order! Here are the details: \n\n- A4 paper (500 sheets): $25.00 \n- Construction paper (200 sheets): $14.00 \n- Poster paper (100 sheets): $25.00 \n\nSubtotal: $64.00 \nDiscount: $3.20 \nTotal Amount: $60.80 \n\nYour order will be delivered by April 17, 2025. We hope this helps with your assembly!""
+
+--- Inventory ---
+ORDER REJECTED: Unfortunately, we are unable to fulfill your order as the necessary materials will arrive after your requested delivery date."
+17,2025-04-14,rejected,40888.9,6108.099999999999,"Note: the following requested products are not in our catalog and were excluded: A3 paper (not in catalog).
+
+""Dear Customer, thank you for your order! Here’s your quote for the paper supplies needed for your reception:
+
+- A4 paper (1000 sheets) - $50.00
+- Colored paper (500 sheets) - $50.00
+- Paper napkins (2000 units) - $40.00
+- Paper cups (1000 units) - $80.00
+- Paper plates (500 units) - $50.00
+
+--- Inventory ---
+ORDER REJECTED: Unfortunately, we cannot fulfill your order in time as key items will not arrive before your deadline. Please consider revising your order."
+18,2025-04-14,fulfilled,41068.9,6088.099999999999,"""Thank you for your order! For your upcoming ceremony, we've prepared a quote of 500 sheets of high-quality cardstock, 1000 sheets of standard copy paper, and 200 sheets of colored paper. The total cost is $180 after applying a discount of $30, ensuring you get the supplies you need at a great price. Your order will be delivered by April 21, 2025.""
+
+--- Inventory ---
+Your order is confirmed and will be shipped without any delays.
+
+--- Fulfillment ---
+Sold 500 x 250 gsm cardstock for $128.57 on 2025-04-14.
+Sold 1000 x Standard copy paper for $34.29 on 2025-04-14.
+Sold 200 x Colored paper for $17.14 on 2025-04-14.
+Your order is confirmed and will be shipped without any delays."
+19,2025-04-15,rejected,41068.9,6088.099999999999,ORDER REJECTED: We cannot fulfill this request because it includes products we do not carry: A3 paper (not in catalog). Please revise your order using our paper supply catalog.
+20,2025-04-17,rejected,40881.15,6133.849999999999,ORDER REJECTED: We cannot fulfill this request because it includes products we do not carry: Tickets (not in catalog). Please revise your order using our paper supply catalog.
